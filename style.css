@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+button {
+    background-color: white;
+}
+
+button, #grid-size {
+    border-color: grey;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+}
+
+@font-face {
+    font-family: EASTRIAL;
+    src: url(etchasketch/EASTRIAL.ttf);
+}
+
+#grid-size {
+    text-align: center;
+}
+
+h1 {
+    font-family: EASTRIAL;
+    font-size: 75px;
+}
+
+.section-one {
+    align-items: center;
+    /* background-color: #4AAEFF; */
+    display: flex;
+    flex: 0.2;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding-left: 35px;
+}
+
+.section-two {
+    /* background-color: #A49CFF; */
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 150px;
+}
+
+.sketch-pad {
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+    height: 500px;
+    width: 500px;
+}

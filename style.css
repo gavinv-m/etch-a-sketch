@@ -8,6 +8,10 @@ button {
     background-color: white;
 }
 
+button:hover {
+    background-color: #E6E4E3
+}
+
 button, #grid-size {
     border-color: grey;
     box-sizing: border-box;

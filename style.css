@@ -34,6 +34,10 @@ h1 {
     font-size: 75px;
 }
 
+.rows {
+    flex: 1;
+}
+
 .section-one {
     align-items: center;
     /* background-color: #4AAEFF; */
@@ -55,10 +59,16 @@ h1 {
     padding-left: 150px;
 }
 
-.sketch-pad {
+#sketch-pad {
     border-color: black;
     border-style: solid;
     border-width: thin;
+    display: flex;
+    flex-direction: column;
     height: 500px;
     width: 500px;
 }
+
+/* #sketch-pad > div {
+    flex: 1;
+} */

@@ -25,4 +25,13 @@ function createRows() {
             rowContainer.appendChild(block);
         }
     }
+
+    const blocks = document.querySelectorAll('.block');
+    blocks.forEach(function(block) {
+
+        block.addEventListener('mouseover', function() {
+
+            block.style.backgroundColor = 'black';
+        });
+    }); 
 }

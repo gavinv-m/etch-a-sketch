@@ -1,11 +1,14 @@
-createRows();
+const gridSize = document.getElementById('grid-size');
+gridSize.addEventListener('input', createRows);
 
 function createRows() {
 
-    let numberOfRows = document.getElementById('grid-size').value;
-    numberOfRows = Number(numberOfRows);
+    let numberOfRows = Number(gridSize.value);
 
     const sketchPad = document.getElementById('sketch-pad');
+
+    // Clear previous content
+    sketchPad.innerHTML = '';
 
     for (let i = 0; i < numberOfRows; i++) {
 

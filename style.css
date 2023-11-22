@@ -4,6 +4,10 @@ body {
     width: 100vw;
 }
 
+.block {
+    flex: 1;
+}
+
 button {
     background-color: white;
 }
@@ -35,6 +39,7 @@ h1 {
 }
 
 .rows {
+    display: flex;
     flex: 1;
 }
 

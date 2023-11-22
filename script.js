@@ -16,24 +16,13 @@ function createRows() {
         rowContainer.style.cssText = 'border-bottom: 1px solid black';    
         rowContainer.classList.add('rows');
         sketchPad.appendChild(rowContainer);
-    }
 
-    createBlocks(numberOfRows);
-}
-
-function createBlocks(number) {
-
-    const rows = document.getElementsByClassName('rows');
-
-    for (let i = 0; i < number; i++) {
-
-        for (let j = 0; j < number; j++) {
+        for (let j = 0; j < numberOfRows; j++) {
 
             const block = document.createElement('div');
             block.style.cssText = 'border-right: 1px solid black';
             block.classList.add('block');
-
-            rows[i].appendChild(block);
+            rowContainer.appendChild(block);
         }
     }
 }

@@ -1,6 +1,9 @@
 const gridSize = document.getElementById('grid-size');
 gridSize.addEventListener('input', createRows);
 
+let color = 'black';
+let rainbowOn = false;
+
 function createRows() {
 
     let numberOfRows = Number(gridSize.value);
@@ -31,7 +34,38 @@ function createRows() {
 
         block.addEventListener('mouseover', function() {
 
-            block.style.backgroundColor = 'black';
+            block.style.backgroundColor = !rainbowOn ? color :
+            randomRgbColor();
         });
     }); 
 }
+
+function randomRgbColor() {
+    let r = Math.floor(Math.random() * 256); // Random between 0-255
+    let g = Math.floor(Math.random() * 256); // Random between 0-255
+    let b = Math.floor(Math.random() * 256); // Random between 0-255
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+  };
+
+
+
+const defaultColor = document.getElementById('default');
+const rainbow = document.getElementById('rainbow');
+const eraser = document.getElementById('eraser');
+
+defaultColor.addEventListener('click', function() {
+
+    rainbowOn = false; 
+    color = 'black';
+});
+
+rainbow.addEventListener('click', function() {
+
+    rainbowOn = true;
+});
+
+eraser.addEventListener('click', function() {
+
+    rainbowOn = false;
+    color = 'white';
+});

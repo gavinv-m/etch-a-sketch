@@ -1,26 +1,31 @@
+createRows(16);
+
 const gridSize = document.getElementById('grid-size');
-gridSize.addEventListener('input', createRows);
-
-let color = 'black';
-let rainbowOn = false;
-
-function createRows() {
-
+gridSize.addEventListener('input', function() {
+    
     let numberOfRows = Number(gridSize.value);
+    createRows(numberOfRows);
+
+    if (gridSize.value.length == 0) {
+        createRows(16);
+    }
+}); 
+
+function createRows(number) {
 
     const sketchPad = document.getElementById('sketch-pad');
 
     // Clear previous content
     sketchPad.innerHTML = '';
 
-    for (let i = 0; i < numberOfRows; i++) {
+    for (let i = 0; i < number; i++) {
 
         const rowContainer = document.createElement('div');
         rowContainer.style.cssText = 'border-bottom: 1px solid black';    
         rowContainer.classList.add('rows');
         sketchPad.appendChild(rowContainer);
 
-        for (let j = 0; j < numberOfRows; j++) {
+        for (let j = 0; j < number; j++) {
 
             const block = document.createElement('div');
             block.style.cssText = 'border-right: 1px solid black';
@@ -40,13 +45,15 @@ function createRows() {
     }); 
 }
 
+let color = 'black';
+let rainbowOn = false;
+
 function randomRgbColor() {
     let r = Math.floor(Math.random() * 256); // Random between 0-255
     let g = Math.floor(Math.random() * 256); // Random between 0-255
     let b = Math.floor(Math.random() * 256); // Random between 0-255
     return 'rgb(' + r + ',' + g + ',' + b + ')';
   };
-
 
 
 const defaultColor = document.getElementById('default');
